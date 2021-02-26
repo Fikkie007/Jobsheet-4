@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    echo 'Welcome';
-});
+Route::get('/', [PageController::class, 'index']);
 
-Route::get('/about', function(){
-    echo '1941720079 & Fikkie Akbar H';
-});
+Route::get('/about', [PageController::class, 'about']);
 
-Route::get('/articles/{id}', function($id){
-    echo "Article Pages with ID {id}".$id;
-});
+Route::get('/articles/{id}', [PageController::class, 'articles']);
