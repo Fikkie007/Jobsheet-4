@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class AboutController extends Controller
 {
     public function about(){
-        echo"1941720079 & Fikkie Akbar H";
+        echo'<a href = "https://www.educastudio.com/about-us">About-us</a>';
     }
     //
 }
