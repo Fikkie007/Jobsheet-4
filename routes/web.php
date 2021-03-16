@@ -1,10 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\ProductsPage;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,15 +12,22 @@ use App\Http\Controllers\ProductsPage;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function() {
+    return view('index');
+});
+
+Route::get('/about', function() {
+    return view('about');
+});
+Route::get('/cart', function() {
+    return view('cart');
+});
+Route::get('/home', function() {
+    return view('index');
+});
 
 
-Route::get('/', [HomeController::class, 'home']);
 
-Route::get('/about-us', [AboutController::class, 'about']);
-
-Route::get('/articles/{id}', [ArticleController::class, 'articles']);
-
-Route::get('/category', [ProductsPage::class, 'product1']);
 
 
 
